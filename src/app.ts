@@ -25,7 +25,7 @@ class App {
     }
 
     private database (): void {
-      mongoose.connect(`mongodb://localhost:27017/${process.env.MONGODB_NAME}`, {
+      mongoose.connect(process.env.MONGODB_CONNECTION, {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
