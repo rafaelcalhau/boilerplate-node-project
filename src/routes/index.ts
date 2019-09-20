@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import UserController from '../controllers/UserController'
-import AuthMiddleware from '../midlewares/auth'
+import AuthMiddleware from '../middlewares/auth'
 
 const routes = Router()
 
@@ -17,6 +17,6 @@ routes
   .delete('/private/users/:id', UserController.delete)
   .get('/private/users', UserController.index)
   .post('/private/users', UserController.store)
-  .put('/private/sers/:id', UserController.update)
+  .put('/private/users/:id', UserController.update)
 
 export default routes
