@@ -1,6 +1,6 @@
 import request from 'supertest'
-import app from '../../src/app'
 
+import app from '../../src/app'
 import User from '../../src/models/User'
 import userData from '../data/user.json'
 
@@ -27,5 +27,15 @@ describe('Listing Users on public route', () => {
       .get('/api/private/users')
 
     expect(response.status).toBe(401)
+  })
+
+  it('should access public route and create a new user', async () => {
+    const response = await request(app)
+      .post('/api/users')
+      .send(userData)
+
+    expect(response.status).toBe(200)
+    expect(response.body).toHaveProperty('email')
+    expect(response.body.email).toBe(userData.email)
   })
 })
