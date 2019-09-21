@@ -4,12 +4,13 @@ import express from 'express'
 import mongoose from 'mongoose'
 
 import routes from './routes'
-
 class App {
     public express: express.Application
 
     public constructor () {
-      dotenv.config()
+      dotenv.config({
+        path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
+      })
 
       this.express = express()
       this.express.disable('x-powered-by')
