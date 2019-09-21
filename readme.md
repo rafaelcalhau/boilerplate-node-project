@@ -4,12 +4,46 @@
 
 Boilerplate application for Node.js with express, typescript, sucrase, mongoose, authenticated REST API, and implementing security best practices.
 
+## Getting Started
+
+#### 1. Clone this repo to initialize a new Node project.
+
+    git clone boilerplate-node-project.git myProject
+
+#### 2. Install the dependencies:
+
+    yarn
+
+or
+
+    npm install
+
+#### 3. Rename the environment files to .env and .env.test, respectively, and configure the SECRET and your mongo connection string for both .env and .env.test.
+
+There is a docker-compose file in case you prefer to run your mongo db on Docker. If so, just run:
+
+    docker-compose up -d
+
 ## Security best practices
 
 1. **Embracing linter security rules**: [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) - This project helps to identify potential security hotspots.
 2. **Disable the header X-Powered-By**: Your application won't show that was developed using Express.js, preventing to send this info to attackers.
 
+## Testing
 
-### Reference
+We're using Jest and Supertest. These libraries together can offer a lot of possibilities to build complete and trusteable tests. The base structure is already ready for you and there are a few tests available.
+
+- [Jestjs.io](https://jestjs.io/): It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!
+- [Supertest](https://github.com/visionmedia/supertest): Super-agent driven library for testing node.js HTTP servers using a fluent API.
+
+To run a test:
+
+    yarn test
+
+or
+
+    npm test
+
+### References
 [We’re under attack! 23+ Node.js security best practices](https://medium.com/@nodepractices/were-under-attack-23-node-js-security-best-practices-e33c146cb87d)
 
