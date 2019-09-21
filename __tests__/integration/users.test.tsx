@@ -20,7 +20,7 @@ describe('Listing Users on public route', () => {
     expect(response.body.length).toBe(1)
   })
 
-  it("should access a private route and not get the users's list", async () => {
+  it('should not access a private route without an authorization token', async () => {
     await User.create(userData)
 
     const response = await request(app)
