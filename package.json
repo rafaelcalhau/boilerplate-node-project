@@ -32,7 +32,9 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/jsonwebtoken": "^8.3.4",
+    "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
