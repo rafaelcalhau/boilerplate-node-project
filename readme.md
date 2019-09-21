@@ -8,7 +8,7 @@ Boilerplate application for Node.js with express, typescript, sucrase, mongoose,
 
 #### 1. Clone this repo to initialize a new Node project.
 
-    git clone boilerplate-node-project.git myProject
+    git clone https://github.com/rafaelcalhau/boilerplate-node-project.git myProject
 
 #### 2. Install the dependencies:
 
