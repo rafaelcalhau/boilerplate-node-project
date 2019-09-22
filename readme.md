@@ -43,6 +43,9 @@ Rate limiting can be used for security purposes, for example to slow down bruteâ
 #### 5. Adjust the HTTP response headers for enhanced security
 Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://helmetjs.github.io/).
 
+#### 6. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
+We're using [bcrypt.js](https://github.com/dcodeIO/bcrypt.js) for users passwords. This package offer an optimized implementation of Bcrypt for JavaScript and is widely trusted and used over the Internet.
+
 ## Testing
 
 We're using Jest and Supertest. These libraries together can offer a lot of possibilities to build complete and trusteable tests. The base structure is already ready for you and there are a few tests available.
