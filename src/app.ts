@@ -1,6 +1,7 @@
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
+import helmet from 'helmet'
 import mongoose from 'mongoose'
 
 import routes from './routes'
@@ -14,6 +15,7 @@ class App {
 
       this.express = express()
       this.express.disable('x-powered-by')
+      this.express.use(helmet())
 
       this.database()
       this.middlewares()

@@ -26,19 +26,22 @@ There is a docker-compose file in case you prefer to run your mongo db on Docker
 
 ## Security best practices
 
-#### 1. **Embracing linter security rules**: [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
-This project helps to identify potential security hotspots.
+#### 1. Embracing linter security rules
+The project [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) helps to identify potential security hotspots.
 
-#### 2. **Disable the header X-Powered-By**
+#### 2. Disable the header X-Powered-By
 Your application won't show that was developed using Express.js, preventing to send this info to attackers.
 
-#### 3. **Use environment variables to store SECRETS**
+#### 3. Use environment variables to store SECRETS
 Very popular and good practice. We should use the package [dotenv](https://github.com/motdotla/dotenv) in order to use .env files in our application
 
-#### 4. **Limit concurrent requests using a middleware**: [express-rate-limit](https://www.npmjs.com/package/express-rate-limit)
+#### 4. Limit concurrent requests using a middleware: [express-rate-limit](https://www.npmjs.com/package/express-rate-limit)
 From the NGINX blog:
 
 Rate limiting can be used for security purposes, for example to slow down brute‑force password‑guessing attacks. It can help protect against DDoS attacks by limiting the incoming request rate to a value typical for real users, and (with logging) identify the targeted URLs. More generally, it is used to protect upstream application servers from being overwhelmed by too many user requests at the same time.
+
+#### 5. Adjust the HTTP response headers for enhanced security
+Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://helmetjs.github.io/).
 
 ## Testing
 
