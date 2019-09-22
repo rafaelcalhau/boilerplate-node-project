@@ -1,25 +1,23 @@
 import { Application, Router } from 'express'
+import RateLimit from 'express-rate-limit'
 
-import UserController from '../controllers/UserController'
-import AuthMiddleware from '../middlewares/auth'
+import PublicRoutes from './public'
+import PrivateRoutes from './private'
 
 export default (app: Application): void => {
   const routes = Router()
+  const apiLimiter = new RateLimit({
+    windowMs: 10 * 60 * 1000, // 10 minutes
+    max: 100,
+    message: 'Too many requests from this IP, please try again after 10 minutes.'
+  })
 
-  routes
-    .delete('/users/:id', UserController.delete)
-    .get('/users', UserController.index)
-    .post('/users', UserController.store)
-    .put('/users/:id', UserController.update)
+  PublicRoutes(routes)
+  PrivateRoutes(routes)
 
-  routes
-    .use(AuthMiddleware)
+  // important if behind a proxy to ensure client IP is passed to req.ip
+  // app.enable('trust proxy')
 
-  routes
-    .delete('/private/users/:id', UserController.delete)
-    .get('/private/users', UserController.index)
-    .post('/private/users', UserController.store)
-    .put('/private/users/:id', UserController.update)
-
+  app.use('/api/', apiLimiter)
   app.use('/api/', routes)
 }
