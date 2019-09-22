@@ -44,7 +44,7 @@ Rate limiting can be used for security purposes, for example to slow down bruteâ
 
 We're using Jest and Supertest. These libraries together can offer a lot of possibilities to build complete and trusteable tests. The base structure is already ready for you and there are a few tests available.
 
-- [Jestjs.io](https://jestjs.io/): It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!
+- [Jestjs.io](https://jestjs.io/): Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 - [Supertest](https://github.com/visionmedia/supertest): Super-agent driven library for testing node.js HTTP servers using a fluent API.
 
 To run a test:
