@@ -28,6 +28,7 @@ There is a docker-compose file in case you prefer to run your mongo db on Docker
 
 1. **Embracing linter security rules**: [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) - This project helps to identify potential security hotspots.
 2. **Disable the header X-Powered-By**: Your application won't show that was developed using Express.js, preventing to send this info to attackers.
+3. **Limit concurrent requests using a middleware**: [express-rate-limit](https://www.npmjs.com/package/express-rate-limit) - Basic rate-limiting middleware for Express.
 
 ## Testing
 
