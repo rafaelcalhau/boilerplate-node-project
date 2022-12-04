@@ -29,7 +29,6 @@ class App {
 
     private database (): void {
       mongoose.connect(process.env.MONGODB_CONNECTION, {
-        useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
